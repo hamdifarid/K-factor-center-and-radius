@@ -49,17 +49,22 @@ meunm = 1-(mod(s11)**2)
 meudm1 = mod(cal_complex(s22,s22a)-(delta)*(cal_complex(s11,s11a).conjugate()))
 meudm2 = mod(cal_complex(s12,s12a)*cal_complex(s21,s21a))
 
+print('delta =',calculate_polar(delta))
 print('Delta =',deltamod)
 print('k =',mod(k))
 print('meu =', meunm/(meudm1+meudm2))
 print('Cl =',calculate_polar(Clnm.conjugate()/Cldm))
 print('Rl =',calculate_polar(Rlnm/Cldm))
 print('Cs =',calculate_polar(Csnm.conjugate()/Csdm))
-print('Rs =',calculate_polar(Rsnm/Csdm)),
+print('Rs =',calculate_polar(Rsnm/Csdm))
+print('Center 1 =',7.6*mod(Csnm.conjugate()/Csdm))
+print('Radii 1 =',7.6*mod(Rsnm/Csdm))
+print('Center 2 =',7.6*mod(Clnm.conjugate()/Cldm))
+print('Radii 2 =',7.6*mod(Rlnm/Cldm))
 if mod(k)<1 and meunm/(meudm1+meudm2)<1:
-    print('Value of K and meu is less than 1 so potentially unstable')
+    print('Value of K and meu is less than 1 so potentially unstable or conditionally stable')
 if mod(k)>1 and meunm/(meudm1+meudm2)>1:
-    print('Value of K and meu is greater than 1 so uncondtionally stable')
+    print('Value of K and meu is greater than 1 so uncondtionally stable or conditonalyl stable ')
 if mod(s11)<1:
     print('the outside of output stability circle is stable reigon')
 if mod(s22)<1:
